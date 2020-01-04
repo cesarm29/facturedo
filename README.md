@@ -6,13 +6,13 @@
 
 #iniciar proyecto ionic serve
 
-# esperar a que se ejecute el explorador en la url http://localhost:8100/
+#esperar a que se ejecute el explorador en la url http://localhost:8100/
 
 
-# pruebas unitarias
-# ejecutar npm test
+#pruebas unitarias
+#ejecutar npm test
 
-# nota: se usaron karma-jasmine
+#nota: se usaron karma-jasmine
 
 
 
@@ -22,13 +22,13 @@
 
 #initiate ionic serve project
 
-# wait for the browser to run in the url http://localhost:8100/
+#wait for the browser to run in the url http://localhost:8100/
 
 
-# unit tests
-# run npm test
+#unit tests
+#run npm test
 
-# note: karma-jasmine were used
+#note: karma-jasmine were used
 
 
 
