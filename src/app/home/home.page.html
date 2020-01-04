@@ -1,0 +1,89 @@
+<ion-menu>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <ion-item (click)="homeRedirect()">
+        <ion-icon name="home" slot="start"></ion-icon>
+        <ion-label>Inicio</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="person" slot="start"></ion-icon>
+        <ion-label>Perfil</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="settings" slot="start"></ion-icon>
+        <ion-label>Configuracion</ion-label>
+      </ion-item>
+      <ion-item (click)="openEnd()">
+        <ion-icon name="exit" slot="start"></ion-icon>
+        <ion-label>Salir</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" main>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-menu-button (click)="openStart()"></ion-menu-button>
+      </ion-buttons>
+      <span item-left>Remates</span>
+      <span item-right>
+        <div class="pull-right">
+          <ion-icon name="person"></ion-icon> {{email}}
+        </div>
+      </span>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size-lg="6" size-md="6" size-sm="6" size="12" *ngFor="let col of responseList">
+          <div>
+            <ion-card>
+              <ion-card-header>
+                <ion-card-title>
+                  <span class="title" item-left>{{col.debtor_entity_name }}</span>
+                  <span item-right class="currency">
+                    <div class="pull-right">
+                      <span>$</span>{{ (col.amount | currency : '$' : false : '2.0-0').replace('$', '') }}<span
+                        class="decimals">.00</span>
+                    </div>
+                  </span>
+                </ion-card-title>
+
+                <div class="logo">
+                  <span item-right>
+                    <span item-left></span>
+                    <div class="pull-right">
+                      {{col.cost_time_priority | priority }}
+                      <ion-icon *ngIf="col.cost_time_priority == 1" ios="ios-flash" md="md-flash" class="icon"></ion-icon>
+                      <ion-icon *ngIf="col.cost_time_priority == 2" ios="logo-usd" md="logo-usd" class="icon"></ion-icon>
+                    </div>
+                  </span>
+                </div>
+
+                <p>Fecha de pago:</p>
+                <p class="bold">{{col.payment_date | date:'dd MMMM yyyy'}} </p>
+              </ion-card-header>
+
+              <ion-card-content>
+                Fondeada al <span class="percentage"> {{col.percentage_completed | percent:'2.0-2'}}</span>
+                <!-- Progress bar -->
+                <ion-progress-bar value="{{col.percentage_completed}}"></ion-progress-bar>
+                El remate se cierra el: {{col.end_date | date:'dd MMMM HH:mm '}}h
+              </ion-card-content>
+
+            </ion-card>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</div>

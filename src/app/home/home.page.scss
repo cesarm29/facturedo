@@ -1,0 +1,76 @@
+
+ion-content{
+    --background:#f3f4fa;
+    }
+ 
+ion-progress-bar {
+    height: 15px;
+    -moz-border-radius: 25px;
+	-webkit-border-radius: 25px;
+    border-radius: 25px;
+    --background:#cecece;
+    --progress-background: #1962f0;
+} 
+
+ion-card{
+    --background:white;
+}
+
+ion-card-title{
+    font-size: 14px;
+}
+
+.list-md {
+    height: 100%;
+}
+
+.ion-padding {
+    background:#dedede;
+}  
+
+.pull-right {
+    float: right;
+}
+
+.logo {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bold {
+    color:#434750;
+    font-weight: bold;
+}
+
+.currency{
+    font-size: 22px;
+    color:#1962f0;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.percentage{
+    width: 80px;
+    color:#1962f0;
+    font-weight: bold;
+}
+
+.decimals{
+    font-size: 16px;
+    color:#1962f0;
+}
+.icon{
+    width: 15px;
+    height: 15px;
+    background: gray; 
+    -moz-border-radius: 70px; 
+    -webkit-border-radius: 70px; 
+    border-radius: 70px;
+    color: white;
+}
+
+.title{
+    color:#434750;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}

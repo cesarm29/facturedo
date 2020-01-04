@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Facturedo</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+    <ion-row>
+      <ion-col size="12" size-sm="10" offset-sm="1" size-md="8" offset-md="2" size-lg="6" offset-lg="3" size-xl="4"
+      offset-xl="4">
+
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title class="ion-text-center">Login</ion-card-title>
+            </ion-card-header>
+     
+            <ion-card-content style="height:100%">
+     
+              <form [formGroup]="loginForm" (ngSubmit)="onClickSubmit()" >
+                <ion-item>
+                  <ion-label position="floating">Email</ion-label>
+                  <ion-input formControlName="email"></ion-input>
+                </ion-item>
+                <div class="contentEmail" *ngFor="let validation of account_validation_messages.email" class="invalid-feedback">
+                  <div *ngIf="submitted && loginForm.get('email').hasError(validation.type)"> <label id="error"> {{validation.message}} </label></div>
+                </div>
+              
+                <ion-item>
+                  <ion-label position="floating">Contraseña</ion-label>
+                  <ion-input type="password" formControlName="password"></ion-input>
+                </ion-item>
+                <div class="contentPassword" *ngFor="let validation of account_validation_messages.password" class="invalid-feedback">
+                  <div *ngIf="submitted && loginForm.get('password').hasError(validation.type)"> <label id="error"> {{validation.message}} </label></div>
+                </div>
+              
+                <p class="ion-text-right">Olvido su Contraseña?</p>
+              
+                <ion-button type="submit" expand="full" color="primary"  >Ingresar</ion-button>
+              </form>
+     
+            </ion-card-content>
+          </ion-card>
+          
+        </ion-col>
+
+      
+    </ion-row>
+
+
+</ion-content>
